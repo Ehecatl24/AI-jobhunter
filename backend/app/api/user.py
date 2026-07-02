@@ -22,7 +22,7 @@ def create_user(
     user_service: UserService = Depends(get_user_service),
 ):
     """
-    Create a new user.
+    Register a new user.
     """
 
     user = user_service.create(
@@ -31,5 +31,7 @@ def create_user(
     )
 
     db.commit()
+
+    db.refresh(user)
 
     return user

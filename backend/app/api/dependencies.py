@@ -8,7 +8,7 @@ from app.services.user_service import UserService
 
 def get_db() -> Generator[Session, None, None]:
     """
-    Provide a database session.
+    Database session dependency.
     """
 
     db = SessionLocal()
@@ -21,7 +21,7 @@ def get_db() -> Generator[Session, None, None]:
 
 def get_user_service() -> UserService:
     """
-    Return a UserService instance.
+    User service dependency.
     """
 
     return UserService()

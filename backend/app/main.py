@@ -10,7 +10,6 @@ app = FastAPI(
     version=settings.PROJECT_VERSION,
 )
 
-# Register API routers
 app.include_router(
     user_router,
     prefix=settings.API_V1_PREFIX,
